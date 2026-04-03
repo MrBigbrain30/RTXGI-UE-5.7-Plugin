@@ -1005,9 +1005,11 @@ static FDDGITexturePixels GetTexturePixelsStep1_RenderThread(FRHICommandListImme
 
 	CreateInfo.AddFlags(TexCreate_ShaderResource
 
+		PRAGMA_DISABLE_UNDEFINED_IDENTIFIER_WARNINGS
 #if PLATFORM_PS5
 		| TexCreate_CPUReadback
 #endif
+		PRAGMA_ENABLE_UNDEFINED_IDENTIFIER_WARNINGS
 	);
 
 	CreateInfo.InitialState = ERHIAccess::CopyDest;
